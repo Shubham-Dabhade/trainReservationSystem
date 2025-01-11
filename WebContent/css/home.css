@@ -1,0 +1,13 @@
+
+#dynamicAlert{
+    display: absolute;
+    position: absolute;
+    z-index:999 !important;
+    left: 50%;
+    /* top: 50%; */
+    transform: translate(-50%, 28%);
+}
+
+.home-container{
+	
+}
