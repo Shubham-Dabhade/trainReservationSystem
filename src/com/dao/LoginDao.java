@@ -30,8 +30,6 @@ public class LoginDao {
 			ps.setString(2, loginUser.getPassword());
 			rs = ps.executeQuery();
 			
-			System.out.println("checking the db sent response: "+rs);
-			
 			if(rs.next()){
 				System.out.println(rs);
 				id = rs.getInt(1);

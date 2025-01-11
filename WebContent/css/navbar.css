@@ -206,22 +206,88 @@
 	/* Legacy iOS */
 }
 
-body{
-	font-family: 'Poppins';
+
+.navbar-container{
+	height:60px;
 }
 
 
-#dynamicAlert{
-    display: absolute;
-    position: absolute;
-    z-index:999 !important;
-    left: 50%;
-    /* top: 50%; */
-    transform: translate(-50%, 28%);
-}
-
-.admin-home-container{
+.inside-navbar-container{
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+	flex-direction:row;
 	height:100%;
 	width:100%;
 	padding:0px 60px;
 }
+
+
+.navbar-brand-container{
+	display:flex;
+	align-items:center;
+	height:100%;
+	flex-direction:row;
+	text-decoration:none;
+	font-size: 25px;
+    font-style: italic;
+    font-weight: 900;
+    color:#0070E0;
+}
+.navbar-brand-container:hover{
+	color:#0070E0;
+}
+.logo-container{
+	height:100%;
+	width:100%;
+}
+
+.logo-image-container{
+	height:30px;
+	width:30px;
+	border-radius:50%;
+	background-color:#0070E0;
+	padding:19px;
+	margin-right:12px;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.nav-right-container{
+	display:flex;
+	align-items:center;
+	height:100%;
+	flex-direction:row;
+	text-decoration:none;
+}
+
+.logout-container{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	height:100%;	
+}
+
+.logout-btn{
+	border:none;
+	background:none;
+}
+
+
+

@@ -1,23 +1,29 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="javax.servlet.http.HttpSession" %>
-<%
-    // Check if there is an active session
-    HttpSession adminHomesession = request.getSession(false);
-    if (adminHomesession == null || Boolean.FALSE.equals(adminHomesession.getAttribute("isAdmin"))) {
-        // If no session or user is not an admin, redirect to login page or user home page
-        response.sendRedirect("adminLogin.jsp");
-        return; // End the execution here
-    }else{
-    	String alertType = (String) adminHomesession.getAttribute("alertType");
-        String alertMessage = (String) adminHomesession.getAttribute("alertMessage");
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ page import="javax.servlet.http.HttpSession"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-        if (alertType != null && alertMessage != null) {
-        	out.print("<div id='dynamicAlert' class='alert alert-" + alertType + " alert-dismissible fade show' role='alert'>"+alertMessage+"<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>");
-        	adminHomesession.removeAttribute("alertType");
-        	adminHomesession.removeAttribute("alertMessage");
-            out.print("<script>hideAlert();</script>");
-        }
-    }
+<%
+// Check if there is an active session
+
+HttpSession homeSession = request.getSession(false);
+if (homeSession.getAttribute("isAdmin") == null || Boolean.FALSE.equals(homeSession.getAttribute("isAdmin"))) {
+	// If no session or user is not logged in, redirect to login page
+	response.sendRedirect("Home.jsp");
+	return; // End the execution here
+} else {
+	String alertType = (String) homeSession.getAttribute("alertType");
+	String alertMessage = (String) homeSession.getAttribute("alertMessage");
+
+	if (alertType != null && alertMessage != null) {
+		out.print("<div id='dynamicAlert' class='alert alert-" + alertType
+		+ " alert-dismissible fade show' role='alert'>" + alertMessage
+		+ "<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button></div>");
+		homeSession.removeAttribute("alertType");
+		homeSession.removeAttribute("alertMessage");
+		out.print("<script>hideAlert();</script>");
+	}
+}
 %>
 <!DOCTYPE html>
 <html>
@@ -29,12 +35,21 @@
 	rel="stylesheet"
 	integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
 	crossorigin="anonymous">
-	<link rel="stylesheet" href="css/adminHome.css">
+<link rel="stylesheet" href="css/adminHome.css">
 </head>
 <body>
-	Admin Home Page
+	<%-- Include Navbar --%>
+	<jsp:include page="navbar.jsp" />
+	<div id="Admin_Home" class="admin-home-container">Admin Home Page
+	</div>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-	<script src="adminHome.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+	integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+	integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+	crossorigin="anonymous"></script>
+<script src="adminHome.js"></script>
 </html>
