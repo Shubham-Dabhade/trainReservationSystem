@@ -44,7 +44,7 @@ public class Member {
 	}
 
 
-	public void setPhoneNo(int phoneNo) {
+	public void setPhoneNo(long phoneNo) {
 		this.phoneNo = phoneNo;
 	}
 
@@ -58,7 +58,15 @@ public class Member {
 		this.aadharNum = aadharNum;
 	}
 
+	
+	public Member() {
+		
+	}
 
+	public Member(String userName, String email, long phoneNo, String aadharNum) {
+		this(userName,"defaultPassword",email,phoneNo,aadharNum);
+		
+	}
 	public Member(String userName, String password, String email, long phoneNo, String aadharNum) {
 		super();
 		this.userName = userName;

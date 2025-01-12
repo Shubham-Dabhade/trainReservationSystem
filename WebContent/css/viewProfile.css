@@ -206,97 +206,63 @@
 	/* Legacy iOS */
 }
 
-
-.navbar-container{
-	height:60px;
+body{
+	font-family: 'Poppins';
 }
 
+#dynamicAlert{
+    display: absolute;
+    position: absolute;
+    z-index:999 !important;
+    left: 50%;
+    /* top: 50%; */
+    transform: translate(-50%, 28%);
+}
 
-.inside-navbar-container{
-	display:flex;
-	align-items:center;
-	justify-content:space-between;
-	flex-direction:row;
-	height:100%;
-	width:100%;
+.view-profile-container{
 	padding:0px 60px;
 }
 
-
-.navbar-brand-container{
-	display:flex;
-	align-items:center;
-	height:100%;
-	flex-direction:row;
-	text-decoration:none;
-	font-size: 25px;
-    font-style: italic;
-    font-weight: 900;
-    color:#0070E0;
-}
-.navbar-brand-container:hover{
-	color:#0070E0;
-}
-.logo-container{
-	height:100%;
-	width:100%;
+.inside-profile-container{
+	margin-top:30px;
 }
 
-.logo-image-container{
-	height:30px;
-	width:30px;
-	border-radius:50%;
-	background-color:#0070E0;
-	padding:19px;
-	margin-right:12px;
-	display:flex;
-	align-items:center;
-	justify-content:center;
+#view-profile-title{
+	line-height: 1.66;
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	color: #222;
+	font-family: Poppins;
+	font-size: 36px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.nav-right-container{
-	display:flex;
-	align-items:center;
-	height:100%;
-	flex-direction:row;
-	text-decoration:none;
+.profileForm{
+	margin-top:25px;
+	display:grid;
+	grid-template-columns:auto auto;
+	gap:15px;
+	    margin: 25px 0px;
+   	border-radius: 15px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	padding: 30px !important;
 }
 
-.profile-container{
-	padding:0px 12px;
-	cursor:pointer;
-	border:none !important;
-}
-.profile-container:active{
-	border:none !important;
+.editFormButtons{
+	grid-row: 6;
+    grid-column-start: 2;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap:14px;
 }
 
 
-.logout-container{
-	display:flex;
-	align-items:center;
-	justify-content:center;
-	height:100%;	
-}
-
-.logout-btn{
-	border:none;
-	background:none;
+@media ( max-width : 768px) {
+	.profileForm{
+		display:flex;
+	}
 }
 
 

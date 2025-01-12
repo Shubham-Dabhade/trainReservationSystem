@@ -29,7 +29,7 @@ if (homeSession.getAttribute("isAdmin") == null || Boolean.FALSE.equals(homeSess
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Admin Home</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
 	rel="stylesheet"
